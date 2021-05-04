@@ -2,3 +2,41 @@
 
 1.>gcc filename.c
 2.> .\filecreated   eg  .\a
+
+
+#Type of Headers
+
+1. stddef.h - Defines several useful types and macros
+2. stdint.h - Defines exact width integer types
+3. stdio.h - Defines core input and output function
+4. stdlib.h - Defines numeric conversion function, pseudo-random network generator and memory allocation
+5. string.h - Defines string handling funtions 
+6. math.h - Defines common mathematical functions 
+
+# Syntax to include header file in C:
+#include<header.h>
+
+# Main method declaration
+int main() {}
+
+#Variable Decalaration
+int main()
+{
+    int a;
+}
+
+#Body
+int main()
+{
+    int a;
+    printf("%d",a); // %d specifies the type of variable as decimal and %i specifies the type as integer
+}
+
+#Return Statement
+
+int main()
+{
+    int a;
+    printf("%d",a)
+    return 0;
+}
