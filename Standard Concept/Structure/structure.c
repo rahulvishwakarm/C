@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 
+//Structure allows us to combine difrrent data type in one like Array
+
 //Creating Structure
 struct Books {
         int ISBN;
