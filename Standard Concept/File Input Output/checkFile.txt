@@ -1,0 +1,5 @@
+This file for reading
+testing This
+for fetching the data
+from the resource
+it for check purpose
