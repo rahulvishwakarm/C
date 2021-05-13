@@ -1,1 +1,101 @@
+// Data and Information
+
+Data:
+1. Data is the Collection of raw and Unorganized facts and details like text, observations, figures, symbols and description of things which does not carry any meaning.
+2. When data is arranged in systematic way then it gets a structures and become meaningful.
+3. Raw data are insufficent for decision making
+
+Information
+1. When data is processed, transformed and organised we get the information which help in making decision and have the logical meaning.
+2. Information is sufficient for decision making
+
+
 // Data Structure
+
+Data Structure is systematic way to organize data so that it can be used efficiently(In term of time and space).
+Data Structure is the organization of the data in way so that it can be used efficiently. 
+
+Real Life Example:
+a. BitMap Image - Array Data Structure
+b. Undo/Redo - Stack Data Structure
+c. Connection in social media - Graph Data Structure
+
+
+// User defined Data type - struct, union and enumeration
+eg: struct point {
+        int x;
+        int y;
+    };
+
+// Abstract Data type
+
+1. Data Structure is used to implement ADT.
+2. ADT tells what to do and ADT tells whow to do
+eg: Stack can be implmented using Array or Linked list.
+
+
+// Types of Data Structure
+1. Linear Data Structure - Data Structure is linear when all the elements are arranged in linear(sequential) order.
+eg: Array, Stack, Queue and Linked list
+
+2. Non Linear Data Structure - Data Structure is non linear when all the element are not arranged in a linear(sequential) order.
+eg: Tree, Graph
+
+3. Static Data Structure - In Static Data Structure memmory is allocated at the compile time. Therefore maximum size is fixed.
+Advantage: Fast Access
+Disadvantage: Slow insertiona and deletion
+eg: Array
+
+4. Dynamic Data Structure - In Dynamic Data Structure memory is allocated at the run time. Therefore maximum size is flexible
+Advantage: Faster insertion and deletion
+Disadvantage: Slow Access
+eg: Linked list
+
+
+// Asymptotic Notation
+
+1. Efficiency - Efficiency of data structures is alaways measured in terms of TIME and SPACE
+2. Ideal Data Structure - An Ideal Data Structure will be the Data Structure that consume least possible TIME and less memory SPACE.
+
+// TIme Complexity
+
+1. Running time of program depends upon the size of the input
+2. f(n) is the number of instructions executed for the input value n
+3. Exact running time is not the best solution for calculating the time complexity 
+4. Time complexity depends upon the size of the input
+
+
+// Big O notation
+
+1. Big O notation is used to find the performance of any algorithm by providing the order of the growth of the function.
+2. It gives the upper bond on the function by which we can assume that the function will never grow Faster then this upper bond.
+3. Big O notation helps us to estimate the approximate run time of operations performed on the data structures.
+
+if f(n) and g(n) are two function then:
+    then f(n)=Og(n) if there exist constant c and n0 such that
+        f(n) <= c*g(n)
+        For all the value of n>=n0  
+
+4. Big O notation helps us in finding the growth rate of function without plugging in different values of N.
+5. Big O notation simplifies the function by eliminates the unnecessary terms which are not contributing much in over all run time.
+
+
+// Guide Lines Related to Asymptotic Notation
+
+1. Loops
+a. Loops execute n times
+
+2. Nested Loop 
+a. Outer loop execute n times
+b. Inner loop execute n times
+c. Total time = n*n = O(n^2)
+
+
+
+// Recursion
+Recursion is the function which calls itself directly or indirectly
+eg:
+    int fun()
+    {
+        fun();
+    }
