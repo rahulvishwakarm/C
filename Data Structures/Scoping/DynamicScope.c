@@ -17,7 +17,7 @@ int main()
     int a=10;
     a=fun1(a);
     printf("%d",a);
-}
+}   
 
 int fun1(int b)
 {
