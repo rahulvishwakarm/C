@@ -1,0 +1,13 @@
+1. Omega Notation is the formal way to express the lower bond of an algorithm's running time
+2. It measures the best case time complexity or the best amount of time an algorithm can possibly take to complete
+
+Ω(f(n)) ≥ { g(n) : there exists c > 0 and n0 such that g(n) ≤ c.f(n) for all n > n0. }
+
+constant	−	Ο(1)
+logarithmic	−	Ο(log n)
+linear	−	Ο(n)
+n log n	−	Ο(n log n)
+quadratic	−	Ο(n2)
+cubic	−	Ο(n3)
+polynomial	−	n^Ο(1)
+exponential	−	2^O(n)

@@ -1,0 +1,13 @@
+1. Big O notation is the formal way to express the upper bound of an algorithm's running time. 
+2. It measure the worst case time complexity or the longest amount of time an algorithm can possibly take to complete
+
+Ο(f(n)) = { g(n) : there exists c > 0 and n0 such that f(n) ≤ c.g(n) for all n > n0. }
+
+constant	−	Ο(1)
+logarithmic	−	Ο(log n)
+linear	−	Ο(n)
+n log n	−	Ο(n log n)
+quadratic	−	Ο(n2)
+cubic	−	Ο(n3)
+polynomial	−	n^Ο(1)
+exponential	−	2^O(n)

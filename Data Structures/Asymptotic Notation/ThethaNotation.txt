@@ -1,0 +1,12 @@
+1. The notation Theta(n) is the formal way to express both the lower bound and the upper bound of an algorithm running time
+
+θ(f(n)) = { g(n) if and only if g(n) =  Ο(f(n)) and g(n) = Ω(f(n)) for all n > n0. }
+
+constant	−	Ο(1)
+logarithmic	−	Ο(log n)
+linear	−	Ο(n)
+n log n	−	Ο(n log n)
+quadratic	−	Ο(n2)
+cubic	−	Ο(n3)
+polynomial	−	n^Ο(1)
+exponential	−	2^O(n)
