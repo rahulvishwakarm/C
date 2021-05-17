@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<stdlib.h>  // use for memory allocation
+#include<stdlib.h>  // library for memory allocation
 
 struct node
 {
@@ -10,5 +10,11 @@ struct node
 int main()
 {
     struct node *head = NULL;
+    head = malloc(sizeof(struct node));
+    head->data = 45;  // Node First Part -> Value
+    head->link = NULL;  // Node Second Part -> NULL
+    printf("%d",head->data);
+    return 0;
 }
+
 
