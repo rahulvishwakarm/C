@@ -11,7 +11,7 @@ struct Node
 int main()
 {
     struct Node *head = malloc(sizeof(struct Node));
-    head->prev = NULL;
     head->data = 11;
+    head->prev = NULL;
     head->next = NULL;
 }
