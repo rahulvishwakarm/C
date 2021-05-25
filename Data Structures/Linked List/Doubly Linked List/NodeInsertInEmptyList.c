@@ -26,6 +26,8 @@ int main()
     if(head==NULL) {
         head = link1;
     }
+    last = link1;
+    link1->prev = head;
 
     // Traversing the List
     printf("[head]");
