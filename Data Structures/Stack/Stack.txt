@@ -1,0 +1,13 @@
+1. Stack is the linear data structures which follows particular Order to perform operations
+2. Order may be LIFO(Last in first out) or FILO(First In first out)
+ex: Plate stacked over another in canteen
+
+Operations:
+a. Push - Add the item in the Stack
+b. Pop - Remove the iten from stack
+c. Peek or Top - Return the topmost item
+d. isEmpty - Return True if stack is empty
+
+Ways to implemnt Stack:
+1. Using Array
+2. Using Linked List
