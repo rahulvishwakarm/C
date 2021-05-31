@@ -11,7 +11,7 @@ struct Node *addToNull(struct Node *head,int d)
 {
     if (head != NULL)
         return head;
-    struct Node *lnk = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *lnk = malloc(sizeof(struct Node));
     lnk->data = d;
     head = lnk;
     head->next = head;
@@ -20,11 +20,11 @@ struct Node *addToNull(struct Node *head,int d)
 
 struct Node *addToBeginning(struct Node *head,int d)
 {
-    if(head = NULL)
+    if(head == NULL)
     {
         return addToNull(head,d);
     }
-    struct Node *lnk = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *lnk = malloc(sizeof(struct Node));
     lnk->data = d;
     lnk->next = head->next;
     head->next = lnk;
@@ -33,18 +33,20 @@ struct Node *addToBeginning(struct Node *head,int d)
 
 void traverse(struct Node *head)
 {
-    struct Node *ptr;
+    struct Node *ptr = head->next;
     if (head == NULL)
     {
         printf("List is empty.");
         return;
     }
+    printf("Head->");
     do
     {
-        printf("%d",ptr->data); 
+        printf("%d->",ptr->data); 
         ptr = ptr->next;
     }
     while(ptr!=head->next);
+    printf("Head");
 };
 
 int main()
