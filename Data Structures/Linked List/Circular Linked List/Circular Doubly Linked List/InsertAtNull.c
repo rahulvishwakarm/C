@@ -19,6 +19,7 @@ struct Node *addToEmpty(struct Node *head,int data)
     lnk->prev = NULL;
     head = lnk;
     lnk->next = head;
+    return head;
 };
 
 void traverse(struct Node *head)
