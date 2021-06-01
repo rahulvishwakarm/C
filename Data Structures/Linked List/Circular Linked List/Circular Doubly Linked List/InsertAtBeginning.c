@@ -16,9 +16,9 @@ struct Node *addToEmpty(struct Node *head,int data)
     };
     struct Node *lnk = malloc(sizeof(struct Node));
     lnk->data = data;
-    lnk->prev = NULL;
     head = lnk;
     lnk->next = head;
+    lnk->prev = lnk->next;
     return head;
 };
 
