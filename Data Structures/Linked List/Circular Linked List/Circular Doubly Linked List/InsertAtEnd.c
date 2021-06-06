@@ -31,10 +31,16 @@ struct Node *addToBeginning(struct Node *head,int data)
     };
     struct Node *lnk = malloc(sizeof(struct Node));
     lnk->data = data;
-    lnk->next = head;
-    lnk->prev = head;
+    struct Node *ptr = head;
+    while(ptr->next!=head)
+    {
+        ptr = ptr->next;
+    }
+    ptr->next = lnk;
+    lnk->prev = ptr;
     head->prev = lnk;
-    head->next = lnk;
+    lnk->next = head;
+    head = lnk;
     return head;
 }
 
