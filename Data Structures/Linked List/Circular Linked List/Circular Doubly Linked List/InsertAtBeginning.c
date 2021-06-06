@@ -29,14 +29,8 @@ struct Node *addToBeginning(struct Node *head,int data)
         printf("linked List is Empty!!");
         return head;
     };
-    struct Node *lnk = malloc(sizeof(struct Node));
-    lnk->data = data;
-    lnk->next = head->next;
-    head->next = lnk;
-    head->prev = lnk->next;
-
-    // If there is more thyen one node present previously
-    /*
+        struct Node *lnk = malloc(sizeof(struct Node));
+        lnk->data = data;
         struct Node *ptr = head;
         while(ptr->next!=head)
         {
@@ -47,8 +41,7 @@ struct Node *addToBeginning(struct Node *head,int data)
         head->prev = lnk;
         lnk->next = head;
         head = lnk;
-    */
-    return head;
+        return head;
 }   
 
 void traverse(struct Node *head)
