@@ -23,11 +23,8 @@ int main()
     link1->prev = NULL;
     
     // Insertion
-    if(head==NULL) {
-        head = link1;
-    }
+    head = link1;
     last = link1;
-    link1->prev = head;
 
     // Traversing the List
     printf("[head]");
