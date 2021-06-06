@@ -46,13 +46,14 @@ void insertAtSpecific(int IE)
     int nodePos;
     printf("After which node do you want to insert new node: ");
     scanf("%d",&nodePos);
-    while (ptr->data!=nodePos)
+    for(int i=1;i<nodePos;i++)
     {
         ptr=ptr->next;
-    }
+    };
+    instAtSpecific->prev = ptr;
     instAtSpecific->next = ptr->next;
+    ptr->next->prev = instAtSpecific;
     ptr->next = instAtSpecific;
-    instAtSpecific->prev = ptr->next;
 };
 
 void printList()
