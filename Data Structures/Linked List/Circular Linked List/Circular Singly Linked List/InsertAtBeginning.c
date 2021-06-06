@@ -27,10 +27,10 @@ struct Node *addToBeginning(struct Node *head,int d)
     struct Node *lnk = malloc(sizeof(struct Node));
     lnk->data = d;
     struct Node *temp = head;
-    do
+    while(temp->next!=head)
     {
         temp = temp->next;
-    } while(temp->next!=head);
+    }
     temp->next = lnk;
     lnk->next = head;
     return head;
