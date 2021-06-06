@@ -45,8 +45,8 @@ void deleteFromBeg()
     {
         struct Node *ptr = head;
         head = head->next;
+        head->prev = NULL;
         free(ptr);
-        ptr = NULL;
     }
 };
 
