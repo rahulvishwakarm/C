@@ -26,8 +26,13 @@ struct Node *addToBeginning(struct Node *head,int d)
     }
     struct Node *lnk = malloc(sizeof(struct Node));
     lnk->data = d;
-    lnk->next = head->next;
-    head->next = lnk;
+    struct Node *temp = head;
+    do
+    {
+        temp = temp->next;
+    } while(temp->next!=head);
+    temp->next = lnk;
+    lnk->next = head;
     return head;
 };
 
