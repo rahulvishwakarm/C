@@ -38,14 +38,14 @@ void insert(int d)
 void deletefromEnd()
 { 
     struct Node *deleteptr = head;
+    struct Node *temp;
     while (deleteptr->next!=NULL)
     {
         deleteptr = deleteptr->next;
-        if(deleteptr->next->next==NULL)
-        {
-            deleteptr->next = NULL;
-        }
     }
+    temp = deleteptr->prev;
+    temp->next = NULL;
+    free(deleteptr);
 };
 
 void printList()
