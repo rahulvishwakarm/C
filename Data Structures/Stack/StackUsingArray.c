@@ -1,49 +1,93 @@
 #include<stdio.h>
+#include<stdlib.h>
+#define MAX 5
+int a[MAX],top = -1;
+void push();
+void pop();
+void display();
+int main()
+{
+    int ch;
+    printf("1. PUSH or Insert\n");
+    printf("2. POP or delete\n");
+    printf("3. Display\n");
+    printf("4. End Program\n");
 
-void push(char element, char stack[], int *top, int stackSize){
-    if(*top == -1){
-        stack[stackSize - 1] = element;
-        *top = stackSize - 1;
-    }
-    else if(*top == 0){
-        printf("The stack is already full. \n");
-    }
-    else{
-        stack[(*top) - 1] = element;
-        (*top)--;
+    while (1)
+    {
+        printf("\nEnter Choise:");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1:
+            {
+                push();
+                break;
+            }
+            case 2:
+            {
+                pop();
+                break;
+            }
+            case 3:
+            {
+                display();
+                break;
+            }
+            case 4:
+            {
+                exit(0);
+                break;
+            }
+            default:
+            {
+                printf("Wrong Choise!!!");
+            }
+        }
     }
 }
 
-void pop(char stack[], int *top, int stackSize){
-    if(*top == -1){
-        printf("The stack is empty. \n");
+void push()
+{
+    int data;
+    if(top==MAX-1)
+    {
+        printf("Stack is full, Overflow!!");
     }
-    else{
-        printf("Element popped: %c \n", stack[(*top)]);
-        // If the element popped was the last element in the stack
-        // then set top to -1 to show that the stack is empty
-        if((*top) == stackSize - 1){
-            (*top) = -1;
-        }
-        else{
-            (*top)++;
-        }
+    else
+    {
+        printf("Enter the element to be Pushed: ");
+        scanf("%d",&data);
+        top++;
+        a[top] = data;
     }
 }
 
-int main() {
-    int stackSize = 4;
-    char stack[stackSize];
-    // A negative index shows that the stack is empty
-    int top = -1;
-    push('a', stack, &top, stackSize);
-    printf("Element on top: %c\n", stack[top]);
-    push('b',stack, &top, stackSize);
-    printf("Element on top: %c\n", stack[top]);
-    pop(stack, &top, stackSize);
-    printf("Element on top: %c\n", stack[top]);
-    pop(stack, &top, stackSize);
-    printf("Top: %d\n", top);
-    pop(stack, &top, stackSize);
-    return 0;
+void pop()
+{
+    if(top==-1)
+    {
+        printf("Stack is Empty, Underflow!!");
+    }
+    else
+    {
+        printf("Popped Element: %d",a[top]);
+        top--;
+    }
+}
+
+void display()
+{
+    if(top>=0)
+    {
+        printf("Elements: ");
+        for(int i=top;i>=0;i--)
+        {
+            printf("\n%d",a[i]);
+        }
+    }
+    else
+    {
+        printf("Stack is empty!!");
+    }
 }

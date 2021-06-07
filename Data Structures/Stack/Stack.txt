@@ -1,6 +1,26 @@
 1. Stack is the linear data structures which follows particular Order to perform operations
 2. Order may be LIFO(Last in first out) or FILO(First In first out)
-ex: Plate stacked over another in canteen
+ex: Plate stacked over another in canteen, the plates are added to the top of stack, first plate put in the stack is the last plate to be used.
+3. Stack is the ordered list in which insertion and the deletion are done from same end is called as "top" end.
+4. Last element to be inserted is the first element to be first element to be removed.
+5. When the element is inserted in the stack , the operation is called as push operation.
+6. When the element is removed from the stck , the operation is called as pop operation.
+7. Trying to pop element from empty stack is called underflow.
+8. Trying to push the element in the full stack is called as overflow.
+
+
+
+Stack ADT:
+
+Main Stack Operation:
+Push(int data) : Insert data onto stack
+int Pop() : Removes and return the last inserted element from the stack
+
+Auxillary Stack Operation:
+int Top() : Returns the last inserted element from the stack
+int Size() : Returns the number of elements stored in stack
+int IsEmptyStack() : Indicates whether any elements are stored in the stack or not
+int IsFullStack() : Indicates whether stack is full or not
 
 Operations:
 a. Push - Add the item in the Stack
@@ -8,6 +28,6 @@ b. Pop - Remove the iten from stack
 c. Peek or Top - Return the topmost item
 d. isEmpty - Return True if stack is empty
 
-Ways to implemnt Stack:
+Ways to implement Stack:
 1. Using Array
 2. Using Linked List
