@@ -73,7 +73,7 @@ void display(struct Stack *S)
 
 int main()
 {
-    struct Stack *S = StackCreation(100);
+    struct Stack *S = StackCreation();
     push(S,10);
     push(S,20);
     push(S,30);
