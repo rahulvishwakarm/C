@@ -25,7 +25,7 @@ int isFUll(struct Stack *S)
 
 int isEmpty(struct Stack *S)
 {
-    return S->capacity==-1;
+    return S->top==-1;
 }
 
 void push(struct Stack *S,int data)
