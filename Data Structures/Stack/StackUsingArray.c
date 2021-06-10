@@ -16,10 +16,10 @@ struct Stack *StackCreation()
     S->top = -1;
     S->array = (int *)malloc(S->capacity*sizeof(int));
     return S;
-}
+} 
 
 int isFUll(struct Stack *S)
-{
+{                                                                                  
     return S->top==S->capacity-1;
 }
 

@@ -1,0 +1,22 @@
+1. Queue is a data structure in for storing data
+2. Queue is the data structure in which insertion is done from one end called rare end
+    deletion is done from another end called front end .
+3. First element to be inserted to be deleted first, hence called FIFO
+4. When the element is inserted into queue it is called Enquee
+5. When the element is deleted from the queue it is called Dequee
+6. Process of Removing element from empty queue results in Underflow
+7. Process of Inserting element Into empty element results in Overflow
+
+Queue ADT:
+a. Main Queue Operation
+- EnQueue(int data)
+- DeQueue()
+
+b. Auxiliary Operation
+- int Front()
+- int QueueSize()
+- int IsEmptyQueue()
+
+Ways to Implement Queue:
+1. Using Array
+2. Using Linked List
