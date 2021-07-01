@@ -1,46 +1,51 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+//Creating the node
 struct Node
 {
     int data;
     struct Node *next;
 };
 
-int main()
+struct Node *head = NULL;
+
+struct Node *NodeCreation(int data)
 {
-    struct Node *head = malloc(sizeof(struct Node));
-    struct Node *second = malloc(sizeof(struct Node));
-    struct Node *third = malloc(sizeof(struct Node));
+    struct Node *Nodes = (struct Node*) malloc(sizeof(struct Node));
+    Nodes->data = data;
+    Nodes->next = head;
+    head = Nodes;
+}
 
-    head->data = 22;
-    head->next = NULL;
+struct Node *InsertioAtBeginning(int data)
+{
+    struct Node *begNode = (struct Node*) malloc(sizeof(struct Node));
+    begNode->data = data;
+    begNode->next = head;
+    head = begNode;
+}
 
-    second->data = 33;
-    second->next = NULL;
-
-    third->data = 44;
-    third->next = NULL;
-
-    head->next = second;
-    second->next = third;
-
-    // Creating the node to be inserted at the beginning
-    struct Node *zero = malloc(sizeof(struct Node));
-    zero->data = 11;
-
-    // Inserting
-    zero->next = head;
-    head = zero;
-
-    // Traversing the List
+struct Node *TraverseList()
+{
     struct Node *ptr = head;
-    int count = 0;
+    printf("[head]=>");
     while (ptr!=NULL)
     {
-        printf("%d ",ptr->data);
-        count++;
+        printf("%d=>",ptr->data);
         ptr = ptr->next;
     }
-    printf("No of node: %d",count);
+    printf("[NULL]\n");
 }
+
+int main()
+{
+    NodeCreation(10);
+    NodeCreation(20);
+    NodeCreation(30);
+    NodeCreation(40);
+    TraverseList();
+    InsertioAtBeginning(50);
+    TraverseList();
+}
+
