@@ -1,57 +1,70 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Node {
+//Creating the node
+struct Node
+{
     int data;
     struct Node *next;
 };
 
-int main()
+struct Node *head = NULL;
+
+struct Node *NodeCreation(int data)
 {
-    struct Node *head = malloc(sizeof(struct Node));
-    struct Node *second = malloc(sizeof(struct Node));
-    struct Node *third = malloc(sizeof(struct Node));
+    struct Node *Nodes = (struct Node*) malloc(sizeof(struct Node));
+    Nodes->data = data;
+    Nodes->next = head;
+    head = Nodes;
+}
 
-    head->data = 22;
-    head->next = NULL;
+struct Node *InsertioAtBeginning(int data)
+{
+    struct Node *begNode = (struct Node*) malloc(sizeof(struct Node));
+    begNode->data = data;
+    begNode->next = head;
+    head = begNode;
+}
 
-    second->data = 33;
-    second->next = NULL;
-
-    third->data = 44;
-    third->next = NULL;
-    
-    head->next= second;
-    second->next = third;
-
-    // Creating the node to be inserted
-    struct Node *fourth = malloc(sizeof(struct Node));
-    fourth->data = 40;
-    fourth->next = NULL;
-
-    // Creating the pointer to insert at specific position
+struct Node *InsertioAtSpecificPosition(int data,int pos)
+{
+    struct Node *specificNode = (struct Node*) malloc(sizeof(struct Node));
+    specificNode->data = data;
     struct Node *ptr = head;
-    int scnf;
-    printf("Enter position where do you want to insert the new node?: ");
-    scanf("%d",&scnf);
-    for(int i=1;i<scnf;i++) {
-        ptr=ptr->next; //incrementing pointer till scnf
-        if(ptr==NULL) {
-            printf("Position not found to insert!!\n");
-            printf("Reached at the End, Use end insertion algorithm!!");
+    for(int i=1;i<pos;i++) {
+        ptr = ptr->next;
+        if(ptr==NULL)
+        {
+            printf("Insertion is not possible!!\n");
+            printf("Reached at the end of the list!!");
         }
     }
-    fourth->next=ptr->next;
-    ptr->next=fourth;
-
-    // Traversing the List
-    struct Node *point = head;
-    int count = 0;
-    while (point!=NULL)
-    {
-        printf("%d ",point->data);
-        count++;
-        point = point->next;
-    }
-    printf("No of node: %d",count);
+    specificNode->next = ptr->next;
+    ptr->next = specificNode;
 }
+
+struct Node *TraverseList()
+{
+    struct Node *ptr = head;
+    printf("[head]=>");
+    while (ptr!=NULL)
+    {
+        printf("%d=>",ptr->data);
+        ptr = ptr->next;
+    }
+    printf("[NULL]\n");
+}
+
+int main()
+{
+    NodeCreation(10);
+    NodeCreation(20);
+    NodeCreation(30);
+    NodeCreation(40);
+    TraverseList();
+    InsertioAtBeginning(50);
+    TraverseList();
+    InsertioAtSpecificPosition(32,2);
+    TraverseList();
+}
+
