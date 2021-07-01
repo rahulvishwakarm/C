@@ -1,55 +1,98 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Node {
+//Creating the node
+struct Node
+{
     int data;
     struct Node *next;
 };
 
-int main()
+struct Node *head = NULL;
+
+struct Node *NodeCreation(int data)
 {
-    struct Node *head = malloc(sizeof(struct Node));
-    struct Node *second = malloc(sizeof(struct Node));
-    struct Node *third = malloc(sizeof(struct Node));
+    struct Node *Nodes = (struct Node*) malloc(sizeof(struct Node));
+    Nodes->data = data;
+    Nodes->next = head;
+    head = Nodes;
+}
 
-    head->data = 11;
-    head->next=NULL;
+struct Node *InsertioAtBeginning(int data)
+{
+    struct Node *begNode = (struct Node*) malloc(sizeof(struct Node));
+    begNode->data = data;
+    begNode->next = head;
+    head = begNode;
+}
 
-    second->data = 22;
-    second->next = NULL;
-
-    third->data = 33;
-    third->next = NULL;
-
-    head->next = second;
-    second->next = third;
-
-    // Traversing the List
-    struct Node *ptr1 = head;
-    while (ptr1!=NULL)
-    {
-        printf("%d\t", ptr1->data);
-        ptr1 = ptr1->next;
+struct Node *InsertioAtSpecificPosition(int data,int pos)
+{
+    struct Node *specificNode = (struct Node*) malloc(sizeof(struct Node));
+    specificNode->data = data;
+    struct Node *ptr = head;
+    for(int i=1;i<pos;i++) {
+        ptr = ptr->next;
+        if(ptr==NULL)
+        {
+            printf("Insertion is not possible!!\n");
+            printf("Reached at the end of the list!!");
+        }
     }
+    specificNode->next = ptr->next;
+    ptr->next = specificNode;
+}
 
-    // Deleting the Node
+struct Node *LastNodeInsertion(int data)
+{
+    struct Node *lastInsert = (struct Node*) malloc(sizeof(struct Node));
+    lastInsert->data = data;
+    lastInsert->next = NULL;
+    struct Node *ptr = head;
+    while (ptr->next!=NULL)
+    {
+        ptr = ptr->next;
+    }
+    ptr->next = lastInsert;
+}
+
+struct Node *DeleteFromBeginning()
+{
     if(head==NULL) {
         printf("Linked List is empty!!");
     }
-    else{
-        struct Node *temp = head;
-        head = head->next;
-        free(temp);
-        temp = NULL;
-    }
+    struct Node *deltptr = head;
+    head = head->next;
+    free(deltptr);
+    deltptr = NULL;
+}
 
-    // Traversing the List
-    struct Node *ptr2 = head;
-    printf("\n");
-    while (ptr2!=NULL)
+
+struct Node *TraverseList()
+{
+    struct Node *ptr = head;
+    printf("[head]=>");
+    while (ptr!=NULL)
     {
-        printf("%d\t", ptr2->data);
-        ptr2 = ptr2->next;
+        printf("%d=>",ptr->data);
+        ptr = ptr->next;
     }
-    
+    printf("[NULL]\n");
+}
+
+int main()
+{
+    NodeCreation(10);
+    NodeCreation(20);
+    NodeCreation(30);
+    NodeCreation(40);
+    TraverseList();
+    InsertioAtBeginning(50);
+    TraverseList();
+    InsertioAtSpecificPosition(32,2);
+    TraverseList();
+    LastNodeInsertion(9);
+    TraverseList();
+    DeleteFromBeginning();
+    TraverseList();
 }
